@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="home_css.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <title>B-FIT | Fitness Management & Transformative Nutrition</title>
+    <style>
+        body {
+    background-image: url('bfit logo.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+}
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Distribute space between items */
+            align-items: center; /* Vertically align items in the center */
+            padding: 10px 20px; /* Adjust padding */
+            height: auto; /* Adjust height to content */
+            background-color: #fff; /* Optional: Style the navbar background */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+        }
+
+        .nav__left {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center; /* Vertically align links */
+        }
+
+        .nav__links .link {
+            margin-right: 1.5rem; /* Adjust spacing between links */
+        }
+
+        .nav__links .link:last-child {
+            margin-right: 0; /* Remove right margin for the last link */
+        }
+
+        .nav__links .link a {
+            text-decoration: none;
+            color: #333; /* Adjust color as needed */
+            font-weight: 500;
+        }
+
+        .nav__right {
+            display: flex;
+            align-items: center;
+            max-height: 80px; /* Adjust max-height for the logo */
+            width: auto;
+        }
+
+        .logo {
+            max-height: 80px; /* Adjust the maximum height of the logo */
+            width: auto; /* Maintain aspect ratio */
+        }
+
+        .hamburger {
+            display: none; /* Hide hamburger menu by default */
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 1.5rem; /* Add some spacing to the left of the hamburger */
+        }
+
+        .header {
+            padding: 4rem 20px; /* Adjust padding */
+            text-align: center;
+            background-color: #f9f9f9; /* Optional: Style header background */
+        }
+
+        .header__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header__content {
+            margin-bottom: 2rem;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color:white;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color:white;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .quote span {
+            font-weight: bold;
+        }
+
+        .header__image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .explore {
+            padding: 4rem 20px; /* Adjust padding */
+            text-align: center;
+            background-color: #fff; /* Optional: Style explore background */
+        }
+
+        .explore__container {
+            max-width: 1000px;
+            margin: 0 auto;
+            color: rgb(88, 211, 105);
+        }
+
+        .explore__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .explore__card {
+            padding: 1.5rem;
+            background-color: black; /* Optional: Style card background */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #f9f9f9;
+        }
+
+        .explore__card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color:  rgb(88, 211, 105); /* Example icon color */
+        }
+
+        .explore__card h4 {
+            margin-bottom: 0.5rem;
+            color: #fcfcfc;
+        }
+
+        .explore__card p {
+            color: #fcfcfc;
+        }
+
+        .explore__card .btn-secondary {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            background-color:  rgb(88, 211, 105); /* Example button color */
+            color: white;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .why-join {
+            padding: 4rem 20px; /* Adjust padding */
+            background-color: #f9f9f9; /* Optional: Style why-join background */
+            text-align: center;
+        }
+
+        .why-join__container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .why-join__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .join__card {
+            padding: 1.5rem;
+            background-color:black; /* Optional: Style join card background */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .join__card i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color:rgb(88, 211, 105); /* Example icon color */
+        }
+
+        .join_card_content h4 {
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .join_card_content p {
+            color: white;
+        }
+
+        .footer {
+            background-color: #343a40; /* Dark background for footer */
+            color: white;
+            padding: 3rem 20px; /* Adjust padding */
+            text-align: left;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer__col h3,
+        .footer__col h4 {
+            margin-bottom: 1rem;
+        }
+
+        .footer__col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer__col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer__col ul li a {
+            text-decoration: none;
+            color: #adb5bd;
+        }
+
+        .social__links a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: #adb5bd;
+        }
+
+        .footer__bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #adb5bd;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;/* Align items to the start on mobile */
+                max-height: none;
+                /* position: fixed; Remove fixed positioning on mobile */
+                /* top: 0; Remove top positioning */
+                /* left: 0; Remove left positioning */
+                /* z-index: 1000; Remove z-index */
+                background-color: #fff; /* Solid background on mobile */
+                padding: 10px;
+            }
+
+            .nav__left {
+                width: 100%;
+                justify-content: space-between;
+                margin-bottom: 1rem; /* Add some space below the links */
+            }
+
+            .nav__links {
+                display: none;
+                flex-direction: column;
+                position: static; /* Remove absolute positioning */
+                background-color: transparent; /* Make background transparent */
+                text-align: left;
+                box-shadow: none; /* Remove shadow */
+                width: 100%;
+            }
+
+            .nav__links.open {
+                display: flex;
+            }
+
+            .nav__links .link {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .nav__right {
+                justify-content: space-between;
+                align-items: center;
+                max-height: 80px; /* Adjust logo size on mobile */
+                width: auto;
+            }
+
+            .logo {
+                margin-left: 0;
+                max-height: 60px; /* Adjust logo size on mobile */
+                width: auto;
+            }
+
+            .hamburger {
+                display: block;
+                margin-left: 1rem;
+            }
+
+            .header {
+                padding-top: 2rem; /* Adjust padding to account for static navbar */
+            }
+        }
+        .img_footer {
+    display: flex;
+    justify-content: center; /* or space-between / space-around */
+    align-items:flex-start;
+    gap: 10px; /* spacing between icons */
+    list-style: none;
+    padding: 0;
+    margin-bottom: 5px ;
+    flex-wrap: wrap; /* optional: wrap on small screens */
+}
+
+.header-icon {
+    width: 90px;      /* smaller size */
+    height: 80px;     /* keep it square */
+    object-fit: cover;
+    border-radius: 8px; /* optional: make icons slightly rounded */
+    transition: transform 0.2s ease;
+}
+
+.header-icon:hover {
+    transform: scale(1.1); /* subtle hover effect */
+}
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .quote {
+        font-size: 1rem;
+    }
+
+    .header__image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .img_footer {
+        gap: 5px;
+    }
+
+    .header-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .explore__card, .join__card {
+        padding: 1rem;
+    }
+
+    .btn-secondary {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="nav__left">
+        <ul class="nav__links">
+            <li class="link"><a href="program.html">Program</a></li>
+            <li class="link"><a href="service.html">Service</a></li>
+            <li class="link"><a href="about.html">About</a></li>
+        </ul>
+    </div>
+    <div class="nav__right">
+        <img src="logo.png" alt="B-FIT Logo" class="logo">
+        <div class="hamburger">
+            <i class="ri-menu-line"></i>
+        </div>
+    </div>
+</nav>
+
+<header class="header">
+    <div class="container header__container">
+        <div class="header__content">
+            <span class="bg__blur"></span>
+            <span class="bg_blur header_blur"></span>
+            <h1 class="main-title">B-FIT</h1>
+            <h2 class="subtitle">Empower Your Body, Balance Your Mind, Feed Your Soul!</h2>
+            <p class="quote"><span>NOTHING</span> WILL WORK <span>UNLESS</span> YOU DO</p>
+        </div>
+        <div class="header__image">
+            <img src="logo1.gif" alt="Fitness Image">
+        </div>
+    </div>
+</header>
+
+<section class="explore">
+    <div class="container explore__container">
+        <h2>EXPLORE OUR PROGRAMS</h2>
+        <div class="explore__grid">
+            <div class="explore__card">
+                <i class="ri-calendar-line"></i>
+                <h4>SEASONAL PLANS</h4>
+                <p>Embrace the essence of strength as we delve into its various dimensions: physical, mental, and emotional.</p>
+                <a href="season.html" class="btn-secondary">ENTER</a>
+            </div>
+            <div class="explore__card">
+                <i class="ri-body-scan-line"></i>
+                <h4>EXERCISES</h4>
+                <p>It encompasses a range of activities that improve health, strength, flexibility, and overall well-being.</p>
+                <a href="exercise.html" class="btn-secondary">ENTER</a>
+            </div>
+            <div class="explore__card">
+                <i class="ri-leaf-line"></i>
+                <h4>HOME REMEDIES</h4>
+                <p>Sometimes,the most potent remedies are found not in pharmacies,but in our kitchens and gardens.</p>
+                <a href="remedies.html" class="btn-secondary">ENTER</a>
+            </div>
+            <div class="explore__card">
+                <i class="ri-mind-map"></i>
+                <h4>PRANA HUB</h4>
+                <p>Sometimes, the deepest healing isn’t found in medicine, but in the quiet stillness of a yoga mat.</p>
+                <a href="yoga.html" class="btn-secondary">ENTER</a>
+            </div>
+<div class="explore__card">
+    <i class="ri-run-line"></i>
+    <h4>WORKOUT</h4>
+    <p>Sometimes, the strongest therapy isn’t in words, but in the sweat and silence of a good workout.</p>
+    <a href="workout.html" class="btn-secondary">ENTER</a>
+</div>
+
+        </div>
+    </div>
+</section>
+
+<section class="why-join">
+    <div class="container why-join__container">
+        <h2>WHY JOIN B-FIT?</h2>
+        <div class="why-join__grid">
+            <div class="join__card">
+                <i class="ri-fire-line"></i>
+                <div class="join_card_content">
+                    <h4>ELEVATE YOUR FITNESS</h4>
+                    <p>Elevate your fitness journey with our dynamic practice sessions designed to push your limits.</p>
+                </div>
+            </div>
+            <div class="join__card">
+                <i class="ri-medal-line"></i>
+                <div class="join_card_content">
+                    <h4>GOOD MANAGEMENT</h4>
+                    <p>Benefit from our supportive and experienced management team, dedicated to your fitness success.</p>
+                </div>
+            </div>
+            <div class="join__card">
+                <i class="ri-money-dollar-circle-line"></i>
+                <div class="join_card_content">
+                    <h4>INVESTMENT IN YOURSELF</h4>
+                    <p>Joining B-FIT is an investment in your long-term health and well-being, yielding invaluable returns.</p>
+                </div>
+            </div>
+            <div class="join__card">
+                <i class="ri-bar-chart-grouped-line"></i>
+                <div class="join_card_content">
+                    <h4>STRUCTURED PRACTICE</h4>
+                    <p>We provide structured workout routines and personalized seasonal plans to guide your fitness effectively.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<ul class="img_footer">
+    <img src="yoga.jpg" alt="Yoga Icon" class="header-icon" />
+    <img src="gym.jpg" alt="Workout Icon" class="header-icon" />
+    <img src="nurtition.jpg" alt="Nutrition Icon" class="header-icon" />
+    <img src="homerem.jpg" alt="Home Remedy Icon" class="header-icon" />
+    <img src="exe.jpg" alt="Exercise Icon" class="header-icon" />
+</ul>
+
+   
+
+<footer class="footer">
+    <div class="container footer__container">
+        <div class="footer__col">
+            <h3>B-FIT</h3>
+            <p>Your partner in achieving a healthier and fitter you. Join our community today!</p>
+        </div>
+        <div class="footer__col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="program.html">Program</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div class="footer__col">
+            <h4>Contact Us</h4>
+            <p>Amravati, Maharashtra, India</p>
+            <p>Email: info@bfitclub.com</p>
+            <p>Phone: +91 8698402464</p>
+        </div>
+        <div class="footer__col">
+            <h4>Follow Us</h4>
+            <div class="social__links">
+                <a href=""><i class="ri-mail-line"></i></a>
+                <a href="https://www.instagram.com/b_fit_2025?igsh=d2Z3OHUxcXVudWhu"><i class="ri-instagram-line"></i></a>
+                <a href="https://youtube.com/@b-fit-z6s?si=Os9lzxhA-Q9AFyer" target="_blank"><i class="ri-youtube-line"></i></a>
+
+            </div>
+        </div>
+    </div>
+   
+</footer>
+
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav__links');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+</script>
+</body>
+</html>

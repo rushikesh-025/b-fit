@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Simple Home Workouts</title>
+  <meta name="description" content="A simple collection of home exercises for all fitness levels, no equipment required." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f2f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .workout-section {
+      background-color: white;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #16a085;
+      margin-top: 0;
+    }
+
+    .exercise {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .exercise img {
+      width: 120px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .exercise-details {
+      flex: 1;
+    }
+
+    .exercise-details span {
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 6px;
+      color: #2c3e50;
+    }
+
+    .instruction {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #2c3e50;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .exercise {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .exercise img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    @media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+    margin-top: 10px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .workout-section {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  .exercise-details span {
+    font-size: 1rem;
+  }
+
+  .instruction {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .exercise {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .exercise img {
+    width: 100%;
+    height: auto;
+  }
+
+  .exercise-details {
+    width: 100%;
+  }
+
+  .instruction {
+    font-size: 0.85rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏋️‍♂️ 30 At-Home Workout Moves</h1>
+    <p>Bodyweight workouts for all levels — no equipment needed!</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Beginner -->
+    <div class="workout-section">
+      <h2>Beginner</h2>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Jumping+Jacks" alt="Jumping Jacks" />
+        <div class="exercise-details">
+          <span>Jumping Jacks</span>
+          <div class="instruction">Stand tall and jump while spreading legs and raising arms overhead. Repeat rapidly for 30 seconds.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Wall+Sit" alt="Wall Sit" />
+        <div class="exercise-details">
+          <span>Wall Sit</span>
+          <div class="instruction">Slide down a wall until your knees are at 90°, hold for 30–60 seconds. Keep your back flat.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Knee+Push-Up" alt="Push-Ups on Knees" />
+        <div class="exercise-details">
+          <span>Push-Ups (on knees)</span>
+          <div class="instruction">Place hands under shoulders, knees on floor. Lower chest down, push up. Do 10–15 reps.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Bodyweight+Squats" alt="Bodyweight Squats" />
+        <div class="exercise-details">
+          <span>Bodyweight Squats</span>
+          <div class="instruction">Stand with feet shoulder-width apart, lower hips back like sitting. Do 15–20 reps.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Step-Ups" alt="Step-Ups" />
+        <div class="exercise-details">
+          <span>Step-Ups (on stairs)</span>
+          <div class="instruction">Step onto a stair or chair, then back down. Alternate legs. Do 10 reps per leg.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intermediate -->
+    <div class="workout-section">
+      <h2>Intermediate</h2>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Plank+to+Push-Up" alt="Plank to Push-Up" />
+        <div class="exercise-details">
+          <span>Plank to Push-Up</span>
+          <div class="instruction">Start in forearm plank. Push to hands one at a time, then lower. Repeat for 30 seconds.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Tricep+Dips" alt="Tricep Dips" />
+        <div class="exercise-details">
+          <span>Tricep Dips (on a chair)</span>
+          <div class="instruction">Place hands on chair edge behind you, legs extended. Lower hips, bend elbows, then press up.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Mountain+Climbers" alt="Mountain Climbers" />
+        <div class="exercise-details">
+          <span>Mountain Climbers</span>
+          <div class="instruction">From plank, drive knees toward chest alternately at a fast pace. 30–45 seconds.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Jump+Squats" alt="Jump Squats" />
+        <div class="exercise-details">
+          <span>Jump Squats</span>
+          <div class="instruction">Perform a squat, then explode up into a jump. Land softly and repeat. Do 12–15 reps.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Side+Lunges" alt="Side Lunges" />
+        <div class="exercise-details">
+          <span>Side Lunges</span>
+          <div class="instruction">Step one leg to the side, bending the knee while keeping the other leg straight. Alternate sides.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Advanced -->
+    <div class="workout-section">
+      <h2>Advanced</h2>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Burpees" alt="Burpees" />
+        <div class="exercise-details">
+          <span>Burpees</span>
+          <div class="instruction">Jump up, drop into a push-up position, do a push-up, jump up again. Repeat for 30–60 seconds.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Pistol+Squats" alt="Pistol Squats" />
+        <div class="exercise-details">
+          <span>Pistol Squats</span>
+          <div class="instruction">Stand on one leg, lower into a deep squat while keeping other leg extended. Switch legs. 6–8 per side.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Handstand+Hold" alt="Handstand Hold" />
+        <div class="exercise-details">
+          <span>Handstand Hold</span>
+          <div class="instruction">Kick into a handstand against a wall. Hold position, keep core tight. Hold 20–60 seconds.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=One-Arm+Push-Up" alt="One-arm Push-Up" />
+        <div class="exercise-details">
+          <span>One-arm Push-Up</span>
+          <div class="instruction">Feet wide, one hand behind back. Lower slowly with control. Do 5–8 per side.</div>
+        </div>
+      </div>
+
+      <div class="exercise">
+        <img src="https://via.placeholder.com/120x80?text=Plank+Shoulder+Taps" alt="Plank with Shoulder Taps" />
+        <div class="exercise-details">
+          <span>Plank with Shoulder Taps</span>
+          <div class="instruction">From plank, tap each shoulder with opposite hand while keeping hips stable. Do for 30–45 seconds.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 BFit by Rushikesh — Stay fit, stay home 💪
+  </footer>
+</body>
+</html>

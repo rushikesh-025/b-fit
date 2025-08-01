@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Simple Home Workouts</title>
+    <meta name="description" content="A simple collection of home exercises for all fitness levels, no equipment required." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      
+    <style>
+        * {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f6f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+   text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+   
+    color:#4CAF50;;
+    padding: 20px 10px;
+    text-align: center;
+  
+  }
+  .yoga-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between elements as needed */
+    padding: 20px;
+    background-color: #f5f5f5; /* Optional: Add background color */
+  }
+  
+  .header-icon {
+    width: 110px; /* Adjust size as needed */
+    height: 80px;
+  }
+  
+  .header-title {
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .header-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.main-section {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.workout-level-nav {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.workout-level-nav button {
+    background: none;
+    border: none;
+    color: #16a085;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 8px 15px;
+    border-radius: 8px 8px 0 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.workout-level-nav button:hover {
+    background-color: #16a08520;
+}
+
+.workout-level-nav button.active {
+    background-color: #16a085;
+    color: white;
+}
+
+.workout-level-nav .btn-secondary {
+    margin-left: auto;
+    background-color: #ff5722;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.workout-level-nav .btn-secondary:hover {
+    background-color: #e64a19;
+}
+
+.workout-module {
+    padding-top: 20px;
+}
+
+h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.exercise-item {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    background-color: #fafafa;
+}
+
+.exercise-item h4 {
+    color: #16a085;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.exercise-details {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.exercise-details img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.instructions {
+    flex: 1;
+}
+
+.instructions ol {
+    margin-left: 20px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.level-content {
+    display: none;
+}
+
+.level-content.active {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Program Card Styling */
+.program-card {
+    background-color: #1e1e2f;
+    color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.program-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffa726;
+}
+
+.program-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.exercise-category {
+    margin: 20px 0;
+}
+
+.exercise-category h4 {
+    color: #4db6ac;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #4db6ac;
+    padding-bottom: 5px;
+}
+
+.exercise-category ul {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+}
+
+.exercise-category li {
+    margin: 6px 0;
+    position: relative;
+    padding-left: 16px;
+}
+
+.exercise-category li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #ff5722;
+}
+
+.join-button {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.join-button:hover {
+    background-color: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .exercise-details {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .exercise-details img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .workout-level-nav {
+        flex-wrap: wrap;
+    }
+
+    .workout-level-nav button,
+    .workout-level-nav .btn-secondary {
+        margin-bottom: 10px;
+    }
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary i {
+  margin-right: 8px; /* Adds space between the icon and the text */
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+    .about-module {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .about-module h2 {
+        font-size: 1.5em;
+    }
+
+    .about-module p {
+        font-size: 0.95em;
+        padding: 0 5px;
+    }
+
+    .btn-secondary {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .btn-secondary i {
+        font-size: 16px;
+    }
+
+    .team-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 90%;
+        max-width: 320px;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .team-member h3 {
+        font-size: 1.1em;
+    }
+
+    .team-member p {
+        font-size: 0.9em;
+    }
+}
+
+
+
+    </style>
+    <script>
+        function openWorkoutLevel(levelId) {
+            const levelContents = document.querySelectorAll('.level-content');
+            const navButtons = document.querySelectorAll('.workout-level-nav button');
+
+            levelContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            navButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            document.getElementById(levelId).classList.add('active');
+            document.querySelector(`.workout-level-nav button[onclick="openWorkoutLevel('${levelId}')"]`).classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            openWorkoutLevel('beginner'); // Show beginner section by default
+        });
+    </script>
+</head>
+<body><header class="yoga-header">
+    <a href="home.html" class="btn-secondary">
+        <i class="fas fa-home"></i> GOTO HOME
+      </a>
+    <img src="exe.jpg" alt="Left Yoga Icon" class="header-icon left-icon" />
+    <h1 class="header-title">Simple Home Workouts</h1>
+    <img src="logo.png" alt="Right Yoga Icon" class="header-icon right-icon" />
+  </header>
+  <p class="header-subtitle">Bodyweight workouts for all levels — no equipment needed!</p>
+  
+
+
+    <div class="container">
+        <section class="main-section">
+            <h2>Exercises</h2>
+            <div class="workout-level-nav">
+                <button onclick="openWorkoutLevel('beginner')">Beginner</button>
+                <button onclick="openWorkoutLevel('intermediate')">Intermediate</button>
+                <button onclick="openWorkoutLevel('advanced')">Advanced</button>
+                <a href="try_yourself.html" class="btn-secondary">TRY IT YOURSELF</a>
+            </div>
+
+            <div id="beginner" class="workout-module level-content">
+                <h3>Beginner Exercises</h3>
+                <div class="exercise-item">
+                    <h4>Jumping Jacks</h4>
+                    <div class="exercise-details">
+                        <img src="jumping jacks1.gif" alt="Jumping Jacks" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand tall with your arms at your sides and feet together.</li>
+                                <li>Jump your feet out to the sides while simultaneously raising your arms overhead.</li>
+                                <li>Immediately reverse the movement by jumping your feet back together and lowering your arms to your sides.</li>
+                                <li>Repeat rapidly for 30 seconds.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Wall Sit</h4>
+                    <div class="exercise-details">
+                        <img src="wall sit1.gif" alt="Wall Sit" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand with your back against a flat wall.</li>
+                                <li>Slide down the wall by bending your knees until your thighs are parallel to the ground, forming a 90-degree angle at your hips and knees.</li>
+                                <li>Ensure your back remains flat against the wall throughout the exercise.</li>
+                                <li>Hold this position for 30–60 seconds.</li>
+                                <li>Slowly push back up to the starting position.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Push-Ups (on knees)</h4>
+                    <div class="exercise-details">
+                        <img src="push-up1.gif" alt="Push-Ups on Knees" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Start on your hands and knees, with your hands placed slightly wider than shoulder-width apart, directly under your shoulders.</li>
+                                <li>Lower your chest towards the floor by bending your elbows, keeping your body in a straight line from your head to your knees.</li>
+                                <li>Continue lowering until your chest is just above the ground.</li>
+                                <li>Push back up to the starting position by straightening your arms.</li>
+                                <li>Repeat for 10–15 repetitions.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Bodyweight Squats</h4>
+                    <div class="exercise-details">
+                        <img src="body squat1.gif"alt="Bodyweight Squats" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand with your feet shoulder-width apart, toes pointing slightly outward.</li>
+                                <li>Keep your chest up and your core engaged.</li>
+                                <li>Lower your hips back and down as if you were sitting in a chair, keeping your back straight.</li>
+                                <li>Continue lowering until your thighs are parallel to the ground or as low as is comfortable.</li>
+                                <li>Push through your heels to return to the starting standing position.</li>
+                                <li>Repeat for 15–20 repetitions.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Step-Ups (on stairs)</h4>
+                    <div class="exercise-details">
+                        <img src="stepsupon chair1.gif" alt="Step-Ups" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand facing a sturdy step or chair.</li>
+                                <li>Place your right foot firmly on the step.</li>
+                                <li>Push through your right heel to lift your body up onto the step, bringing your left foot to meet your right foot on top.</li>
+                                <li>Step down with your left foot first, followed by your right foot.</li>
+                                <li>Repeat, alternating leading legs for 10 repetitions per leg.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="intermediate" class="workout-module level-content">
+                <h3>Intermediate Exercises</h3>
+                <div class="exercise-item">
+                    <h4>Plank to Push-Up</h4>
+                    <div class="exercise-details">
+                        <img src="planktopushup1.gif" alt="Plank to Push-Up" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Start in a forearm plank position with your elbows directly under your shoulders and your body in a straight line.</li>
+                                <li>Place your right hand on the ground directly under your right shoulder, then push up onto your right hand.</li>
+                                <li>Follow with your left hand, pushing up into a standard push-up position.</li>
+                                <li>Lower back down to your forearms one arm at a time, returning to the plank position.</li>
+                                <li>Repeat the sequence, alternating which hand leads the movement for 30 seconds.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Tricep Dips (on a chair)</h4>
+                    <div class="exercise-details">
+                        <img src="Tricep Dips (on a chair)1.gif" alt="Tricep Dips" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Sit on the edge of a sturdy chair with your hands placed shoulder-width apart, gripping the edge of the seat.</li>
+                                <li>Extend your legs out in front of you.</li>
+                                <li>Slide your hips off the front of the chair, supporting your weight with your hands.</li>
+                                <li>Lower your body by bending your elbows, keeping your back close to the chair.</li>
+                                <li>Continue lowering until your elbows are at about a 90-degree angle.</li>
+                                <li>Push back up to the starting position by straightening your arms.</li>
+                                <li>Repeat for a desired number of repetitions.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Mountain Climbers</h4>
+                    <div class="exercise-details">
+                        <img src="Mountain Climbers1.gif" alt="Mountain Climbers" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Start in a high plank position with your hands directly under your shoulders and your body in a straight line.</li>
+                                <li>Bring your right knee towards your chest, keeping your foot off the ground.</li>
+                                <li>Quickly switch legs, bringing your left knee towards your chest while extending your right leg back.</li>
+                                <li>Continue alternating legs in a running motion, maintaining a stable core and straight body line for 30–45 seconds.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Jump Squats</h4>
+                    <div class="exercise-details">
+                        <img src="squatjump2.gif" alt="Jump Squats" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand with your feet shoulder-width apart, chest up, and core engaged.</li>
+                                <li>Lower into a squat position, keeping your back straight and thighs parallel to the ground.</li>
+                                <li>From the bottom of the squat, explosively jump upwards, extending your legs fully in the air.</li>
+                                <li>Land softly back into the squat position, ready for the next jump.</li>
+                                <li>Repeat for 12–15 repetitions.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Side Lunges</h4>
+                    <div class="exercise-details">
+                        <img src="Side Lunges1.gif" alt="Side Lunges" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand with your feet hip-width apart.</li>
+                                <li>Step your right leg out to the side, keeping your left leg straight.</li>
+                                <li>Bend your right knee and lower your hips as if you were sitting down, keeping your right foot flat on the ground.</li>
+                                <li>Ensure your left leg remains straight, but don't lock your knee.</li>
+                                <li>Push off with your right foot to return to the starting position.</li>
+                                <li>Repeat on the left side by stepping your left leg out.</li>
+                                <li>Continue alternating sides for a desired number of repetitions.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="advanced" class="workout-module level-content">
+                <h3>Advanced Exercises</h3>
+                <div class="exercise-item">
+                    <h4>Burpees</h4>
+                    <div class="exercise-details">
+                        <img src="Burpees1.gif" alt="Burpees" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand with your feet shoulder-width apart and arms at your sides.</li>
+                                <li>Drop into a squat position with your hands flat on the floor in front of you.</li>
+                                <li>Kick your feet back, landing in a push-up position.</li>
+                                <li>Perform one push-up (optional, but recommended for a full burpee).</li>
+                                <li>Jump your feet back up to your hands, returning to the squat position.</li>
+                                <li>Explosively jump up into the air, reaching your arms overhead.</li>
+                                <li>Land softly and immediately go into the next repetition.</li>
+                                <li>Repeat for 30–60 seconds.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Pistol Squats</h4>
+                    <div class="exercise-details">
+                        <img src="Pistol Squats1.gif" alt="Pistol Squats" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Stand on one leg, extending the other leg straight out in front of you. You can hold your arms out for balance.</li>
+                                <li>Slowly lower your body into a deep squat on your standing leg, keeping your extended leg off the ground. Try to bring your hips as close to your heel as possible.</li>
+                                <li>Maintain control throughout the movement and keep your chest up.</li>
+                                <li>Push through the heel of your standing leg to return to the starting position.</li>
+                                <li>Repeat for 6–8 repetitions on one leg, then switch to the other leg.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>Handstand Hold</h4>
+                    <div class="exercise-details">
+                        <img src="handstand1.gif" alt="Handstand Hold" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Start facing a wall. Place your hands shoulder-width apart on the floor, about a foot away from the wall.</li>
+                                <li>Kick up one leg at a time against the wall, bringing your body into an inverted vertical position (handstand).</li>
+                                <li>Once stable, engage your core muscles and maintain a straight line from your wrists to your heels.</li>
+                                <li>Hold this position for 20–60 seconds, breathing steadily.</li>
+                                <li>Carefully come down by lowering one leg at a time.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-item">
+                    <h4>One-Arm Push-Up</h4>
+                    <div class="exercise-details">
+                        <img src="One-arm Push-Up1.gif" alt="One-arm Push-Up" />
+                        <div class="instructions">
+                            <ol>
+                                <li>Start in a standard push-up position with your feet wider than shoulder-width apart for added stability.</li>
+                                <li>Place one hand behind your back.</li>
+                                <li>Lower your chest towards the floor by bending your supporting arm's elbow, keeping your body in a straight line. Lower down as far as you can control.</li>
+                                <li>Push back up to the starting position using the strength of your supporting arm.</li>
+                                <li>Repeat on the other arm.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </body>
+        </html>

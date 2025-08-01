@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <title>Seasonable Fitness Plans</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: #f8f9fa; /* Light grey background */
+            color: #495057; /* Dark grey text */
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        header {
+   text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+   
+    color:#4CAF50;;
+    padding: 20px 10px;
+    text-align: center;
+  
+  }
+  .yoga-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between elements as needed */
+    padding: 20px;
+    background-color: #f5f5f5; /* Optional: Add background color */
+  }
+  
+  .header-icon {
+    width: 110px; /* Adjust size as needed */
+    height: 80px;
+  }
+  
+  .header-title {
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .header-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 100px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+
+        h2 {
+            color: #28a745; /* Green primary color */
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: #6c757d;
+        }
+
+        .seasonable-plans-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            padding: 15px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .season-button {
+            padding: 12px 24px;
+            margin: 0 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: #6c757d; /* Grey button */
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .season-button:hover {
+            background-color: #545b62;
+            transform: scale(1.05);
+        }
+
+        .season-button.active {
+            background-color: #28a745; /* Green active button */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .season-details-container {
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            margin-bottom: 40px; /* Add more margin below season plans */
+        }
+
+        .season-details {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .season-details.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .season-details h3 {
+            color: #28a745;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .season-details strong {
+            font-weight: bold;
+            color: #343a40;
+        }
+
+        .season-details ul {
+            margin-top: 10px;
+            padding-left: 25px;
+            list-style-type: disc;
+        }
+
+        .season-details li {
+            margin-bottom: 8px;
+        }
+
+        /* Season specific subtle background colors */
+        #spring-details.active {
+            background-color: #e6ffe6; /* Light green */
+            border-left: 5px solid #8fbc8f;
+        }
+
+        #summer-details.active {
+            background-color: #fffacd; /* Light yellow */
+            border-left: 5px solid #ffd700;
+        }
+
+        #monsoon-details.active {
+            background-color: #e0f2f7; /* Light blue */
+            border-left: 5px solid #4682b4;
+        }
+
+        #winter-details.active {
+            background-color: #ffe4e1; /* Light coral */
+            border-left: 5px solid #f08080;
+        }
+
+        /* --- Modules Section --- */
+        .fitness-modules {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px; /* Add some space below modules if needed */
+        }
+
+        .fitness-modules h2 {
+            color: #007bff; /* Blue for modules heading */
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .module-card {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .module-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .module-card h3 {
+            color: #007bff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .module-card p {
+            color: #6c757d;
+        }
+
+        .module-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .module-card a:hover {
+            background-color: #0056b3;
+        }
+        .program-card {
+    background-color: #1e1e2f;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .program-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ff9800;
+  }
+  
+  .program-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #e0e0e0;
+  }
+  
+  .season {
+    margin-bottom: 20px;
+    border-left: 4px solid #ff5722;
+    padding-left: 12px;
+  }
+  
+  .season h4 {
+    color: #4dd0e1;
+    margin-bottom: 6px;
+  }
+  
+  .join-button {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #ff5722;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .join-button:hover {
+    background-color: #e64a19;
+  }
+  .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary i {
+  margin-right: 8px; /* Adds space between the icon and the text */
+  font-size: 18px;
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 20px 15px;
+    margin: 20px 10px;
+  }
+
+  .header-title {
+    font-size: 1.6em;
+    text-align: center;
+  }
+
+  .header-subtitle {
+    font-size: 0.95em;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  .season-button {
+    margin: 5px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .seasonable-plans-nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .module-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <header class="yoga-header">
+      <a href="home.html" class="btn-secondary">
+        <i class="fas fa-home"></i> GOTO HOME
+      </a>
+        <img src="nurtition.jpg" alt="Left Yoga Icon" class="header-icon left-icon" />
+        <h1 class="header-title">SEASONABLE FITNESS PLANS</h1>
+        <img src="logo.png" alt="Right Yoga Icon" class="header-icon right-icon" /><br>
+        
+      </header>
+      <p class="header-subtitle">Unlock your peak performance with our season-specific nutrition and fitness guidance.Practice these poses to improve flexibility, strength, and relaxation.</p>
+  
+   
+       <div class="container">
+        <section class="seasonable-plans-nav">
+            <h2>Explore Seasonal Plans</h2>
+            <button class="season-button active" data-season="spring">Spring</button>
+            <button class="season-button" data-season="summer">Summer</button>
+            <button class="season-button" data-season="monsoon">Monsoon</button>
+            <button class="season-button" data-season="winter">Winter</button>
+        </section>
+
+        <section class="season-details-container">
+            <div id="spring-details" class="season-details active">
+                <h3>Spring (March - May)</h3>
+                <p>Embrace the renewal of spring with light and energizing foods.</p>
+                <p><strong>Focus:</strong> Detoxification, increased energy levels, preparing for warmer months.</p>
+                <p><strong>Seasonal Produce:</strong></p>
+                <ul>
+                    <li><strong>Fruits:</strong> Mangoes, Amla, Guava, Strawberries, Kiwi</li>
+                    <li><strong>Vegetables:</strong> Bitter Gourd, Bottle Gourd, Okra, Spinach, Fenugreek, Radish, Carrot, Leafy Greens</li>
+                </ul>
+                <p><strong>Fitness Tips:</strong> Incorporate outdoor activities, focus on flexibility and endurance exercises.</p>
+            </div>
+
+            <div id="summer-details" class="season-details">
+                <h3>Summer (June - August)</h3>
+                <p>Stay hydrated and energized during the hot summer months with refreshing and light options.</p>
+                <p><strong>Focus:</strong> Hydration, maintaining energy in the heat, light and easily digestible foods.</p>
+                <p><strong>Seasonal Produce:</strong></p>
+                <ul>
+                    <li><strong>Fruits:</strong> Watermelon, Muskmelon, Lychee, Jackfruit, Mangoes, Grapes, Berries</li>
+                    <li><strong>Vegetables:</strong> Cucumber, Ridge Gourd, Eggplant, Tomatoes, Peppers, Green Beans, Summer Squash</li>
+                </ul>
+                <p><strong>Fitness Tips:</strong> Prioritize early morning or late evening workouts, focus on swimming and water-based activities.</p>
+            </div>
+
+            <div id="monsoon-details" class="season-details">
+                <h3>Monsoon (September - October)</h3>
+                <p>Strengthen your immunity and enjoy the bounty of the monsoon season.</p>
+                <p><strong>Focus:</strong> Boosting immunity, easily digestible foods, incorporating warming spices.</p>
+                <p><strong>Seasonal Produce:</strong></p>
+                <ul>
+                    <li><strong>Fruits:</strong> Pomegranate, Papaya, Sweet Lime, Grapes, Apples, Pears, Blueberries</li>
+                    <li><strong>Vegetables:</strong> Pumpkin, Radish, Carrot, Beetroots, Root Vegetables</li>
+                </ul>
+                <p><strong>Fitness Tips:</strong> Focus on indoor workouts, maintain consistency with your routine.</p>
+            </div>
+
+            <div id="winter-details" class="season-details">
+                <h3>Winter (November - February)</h3>
+                <p>Nourish your body with warming and nutrient-rich foods to stay healthy during the colder months.</p>
+                <p><strong>Focus:</strong> Providing warmth and energy, boosting immunity, incorporating root vegetables.</p>
+                <p><strong>Seasonal Produce:</strong></p>
+                <ul>
+                    <li><strong>Fruits:</strong> Oranges, Strawberries, Grapes, Pomegranates, Citrus Fruits</li>
+                    <li><strong>Vegetables:</strong> Mustard Greens, Fenugreek Leaves, Spinach, Carrots, Radish, Beetroot</li>
+                </ul>
+                <p><strong>Fitness Tips:</strong> Incorporate strength training to build heat, stay active indoors.</p>
+            </div>
+        </section>
+ <script>
+        const seasonButtons = document.querySelectorAll('.season-button');
+        const seasonDetails = document.querySelectorAll('.season-details');
+
+        seasonButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Deactivate all buttons and hide all details
+                seasonButtons.forEach(btn => btn.classList.remove('active'));
+                seasonDetails.forEach(detail => {
+                    detail.classList.remove('active');
+                    detail.style.opacity = 0;
+                    detail.style.transform = 'translateY(20px)';
+                });
+
+                // Activate the clicked button and show the corresponding details with animation
+                button.classList.add('active');
+                const seasonId = button.getAttribute('data-season') + '-details';
+                const activeDetail = document.getElementById(seasonId);
+                activeDetail.classList.add('active');
+                // Force a reflow to trigger the transition
+                void activeDetail.offsetWidth;
+                activeDetail.style.opacity = 1;
+                activeDetail.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initially show the Spring section with animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const springDetails = document.getElementById('spring-details');
+            const springButton = document.querySelector('.season-button[data-season="spring"]');
+            if (springDetails && springButton) {
+                springDetails.classList.add('active');
+                springButton.classList.add('active');
+                springDetails.style.opacity = 1;
+                springDetails.style.transform = 'translateY(0)';
+            }
+        });
+    </script>
+
+</body>
+</html>

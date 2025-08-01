@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <title>Home Remedies</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+            line-height: 1.7;
+            margin: 30px; /* Increased margin for better spacing */
+            background-color: #f8f9fa; /* Light gray background */
+            color: #495057; /* Darker gray text */
+        }
+
+        header {
+   text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  
+  header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+   
+    color:#4CAF50;;
+    padding: 20px 10px;
+    text-align: center;
+  
+  }
+  .yoga-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing between elements as needed */
+    padding: 20px;
+    background-color: #f5f5f5; /* Optional: Add background color */
+  }
+  
+  .header-icon {
+    width: 110px; /* Adjust size as needed */
+    height: 80px;
+  }
+  
+  .header-title {
+    font-size: 2em;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .header-subtitle {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+  @media (max-width: 600px) {
+    .yoga-header {
+      flex-direction: column;
+    }
+  
+    .header-icon {
+      width: 40px;
+    }
+  
+    .header-title {
+      font-size: 1.5em;
+    }
+  }
+
+        .remedy-group {
+            background-color: #fff;
+            padding: 25px; /* Increased padding */
+            margin-bottom: 25px;
+            border-radius: 10px; /* More rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+            border: black; /* Light border */
+        }
+
+        .remedy-group h2 {
+            color: black; /* Blue secondary color */
+            margin-top: 0;
+            border-bottom: black; /* Thicker, colored bottom border */
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+            font-size: 1.5em; /* Slightly larger heading */
+        }
+
+        .remedy-item {
+            margin-bottom: 18px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .remedy-item strong {
+            font-weight: 600; /* Semi-bold */
+            color: #212529; /* Darker text for emphasis */
+        }
+
+        .remedy-item::before {
+            content: '•'; /* Bullet point */
+            color: black; /* Green bullet */
+            position: absolute;
+            left: 0;
+        }
+
+        .important-note {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #ffebee; /* Light red background */
+            border: 1px solid #fcc2d0; /* Pink border */
+            color: #721c24; /* Dark red text */
+            border-radius: 8px;
+            font-size: 0.9em; /* Slightly smaller font */
+        }
+
+        .important-note strong {
+            font-weight: bold;
+            color: #721c24;
+        }
+
+        .important-note ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .important-note li {
+            margin-bottom: 8px;
+        }
+        .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary i {
+  margin-right: 8px; /* Adds space between the icon and the text */
+  font-size: 18px;
+}
+@media (max-width: 480px) {
+  body {
+    margin: 15px;
+  }
+
+  .remedy-group {
+    padding: 15px;
+  }
+
+  .header-title {
+    font-size: 1.3em;
+    text-align: center;
+  }
+
+  .important-note {
+    padding: 15px;
+    font-size: 0.85em;
+  }
+
+  .btn-secondary {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <header class="yoga-header">
+      <a href="home.html" class="btn-secondary">
+        <i class="fas fa-home"></i> GOTO HOME
+      </a>
+    <img src="homerem.jpg" alt="Left workout Icon" class="header-icon left-icon" />
+    <h1 class="header-title">Home Remedies for Common Issues</h1>
+    <img src="logo.png" alt="Right workout Icon" class="header-icon right-icon" />
+  </header>
+    
+    <div class="remedy-group">
+        <h2>COUGH</h2>
+        <div class="remedy-item"><strong>Honey:</strong> A teaspoon of honey can help soothe a sore throat and may even help suppress a cough, especially in children over one year old. You can take it directly or mix it in warm water or tea.</div>
+        <div class="remedy-item"><strong>Warm liquids:</strong> Drinking warm liquids like herbal tea, warm water with lemon, or broth can help soothe your throat and loosen congestion.</div>
+        <div class="remedy-item"><strong>Steam:</strong> Inhaling steam from a hot shower or a bowl of hot water (be cautious to avoid scalding) can help to moisten your airways and ease congestion. You can add a few drops of eucalyptus or peppermint oil for added relief.</div>
+        <div class="remedy-item"><strong>Saltwater gargle:</strong> Gargling with warm salt water can help to soothe a sore throat and reduce inflammation.</div>
+    </div>
+
+    <div class="remedy-group">
+        <h2>INDIGESTION</h2>
+        <div class="remedy-item"><strong>Ginger:</strong> Ginger has anti-inflammatory properties and can help to settle an upset stomach. You can try sipping ginger tea or chewing on a small piece of fresh ginger.</div>
+        <div class="remedy-item"><strong>Peppermint:</strong> Peppermint tea can help relax the muscles in your digestive system and relieve gas and bloating. However, it might worsen symptoms for some people with acid reflux.</div>
+        <div class="remedy-item"><strong>Baking soda:</strong> A small amount of baking soda mixed with water can help to neutralize stomach acid and relieve heartburn. Use sparingly and avoid if you have high blood pressure. Mix $\frac{1}{2}$ teaspoon of baking soda in 4 ounces of warm water.</div>
+        <div class="remedy-item"><strong>Apple cider vinegar:</strong> Some people find that a small amount of diluted apple cider vinegar can help with indigestion, but it can worsen symptoms for others. If you try this, mix 1-2 teaspoons in a cup of water.</div>
+    </div>
+
+    <div class="remedy-group">
+        <h2>MINOR BURNS</h2>
+        <div class="remedy-item"><strong>Cool water:</strong> Immediately run cool (not cold) water over the burn for 10-20 minutes. This helps to reduce the temperature of the skin and minimize damage.</div>
+        <div class="remedy-item"><strong>Aloe vera:</strong> Applying pure aloe vera gel to the burn can help to soothe the skin and promote healing.</div>
+        <div class="remedy-item"><strong>Petroleum jelly:</strong> Once the burn has cooled, applying a thin layer of petroleum jelly can help to keep the area moist and prevent infection.</div>
+        <div class="remedy-item"><strong>Loose bandage:</strong> Cover the burn with a clean, loose bandage to protect it.</div>
+    </div>
+
+    <div class="remedy-group">
+        <h2>HEADACHES</h2>
+        <div class="remedy-item"><strong>Stay hydrated:</strong> Dehydration can often trigger headaches. Make sure you are drinking enough water throughout the day.</div>
+        <div class="remedy-item"><strong>Rest in a dark, quiet room:</strong> If you have a headache, try lying down in a dark and quiet room to help ease the pain.</div>
+        <div class="remedy-item"><strong>Apply a cold or warm compress:</strong> Applying a cold pack or a warm compress to your forehead or neck can sometimes provide relief.</div>
+        <div class="remedy-item"><strong>Ginger:</strong> Ginger can help reduce inflammation and may provide relief from headaches. Try drinking ginger tea.</div>
+        <div class="remedy-item"><strong>Peppermint oil:</strong> Diluted peppermint essential oil applied to the temples and forehead may help to relieve tension headaches.</div>
+    </div>
+
+    <div class="important-note">
+        <strong>Important Considerations:</strong>
+        <ul>
+            <li>If your symptoms are severe, worsen, or don't improve with home remedies, please consult a doctor.</li>
+            <li>Be aware of any allergies you might have to the ingredients used in home remedies.</li>
+            <li>If you are taking any medications, check with your doctor before trying new home remedies, as some herbs and substances can interact with medications.</li>
+            <li>Home remedies for children and the elderly should be used with extra caution. Always consult a pediatrician or doctor before giving home remedies to these age groups.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

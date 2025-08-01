@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | B-FIT</title>
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Main CSS Variables (define once globally) -->
+  <style>
+    :root {
+      --primary-color: #27ae60;
+      --text-light: #ffffff;
+      --bg-light: #f4f4f4;
+      --blur-dark: rgba(0, 0, 0, 0.4);
+      --shadow-sm: 0 8px 20px rgba(0, 0, 0, 0.3);
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .registration-container {
+      background: var(--blur-dark);
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      width: 90%;
+      max-width: 380px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .registration-container h2 {
+      color: var(--text-light);
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-light);
+      font-size: 15px;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      border: none;
+      padding: 10px;
+      margin-top: 12px;
+      width: 100%;
+      border-radius: 6px;
+      color: var(--bg-light);
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: var(--transition);
+    }
+
+    .btn-primary:hover {
+      background: #2ecc71;
+    }
+
+    .registration-container p {
+      margin-top: 15px;
+      font-size: 14px;
+      color: var(--text-light);
+    }
+
+    .registration-container a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .registration-container a:hover {
+      text-decoration: underline;
+    }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+}
+
+.nav__links .link a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav__links .link a:hover {
+  color: var(--primary-color);
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none; /* hide on desktop */
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.nav__left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__links .link a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav__links .link a:hover {
+  color: var(--primary-color);
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.hamburger {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+}
+
+/* Push login form downward */
+body {
+  padding-top: 80px; /* space for fixed navbar */
+}
+@media (max-width: 480px) {
+  .registration-container {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+
+  .registration-container h2 {
+    font-size: 20px;
+  }
+
+  .form-control {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .nav__links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .nav__right {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  
+  <div class="registration-container">
+    <h2>Login to B-FIT</h2>
+    <form id="loginForm">
+      <input type="text" name="User_ID" placeholder="User ID" class="form-control"
+             pattern="[A-Za-z0-9]{4,15}" 
+             title="User ID must be 4-15 alphanumeric characters" required>
+    
+      <input type="password" name="Password" placeholder="Password" class="form-control"
+             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" 
+             title="Password must contain at least 6 characters, including uppercase, lowercase, and a number" required>
+    
+      <button type="submit" class="btn-primary">Login</button>
+    </form>
+    
+    <p>Don't have an account? <a href="register.html">Register</a></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch('http://localhost/bfit/login.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(async data => {
+        if (data.status === 'success') {
+          await Swal.fire({
+            icon: 'success',
+            title: 'Login Successful',
+            html: `<b>Welcome to B‑FIT, ${data.Name || 'User'}!</b>`,
+            timer: 2500,
+            showConfirmButton: false
+          });
+
+          window.location.href = 'home.html';
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: data.message || 'Invalid credentials!'
+          });
+        }
+      })
+      .catch(err => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Server Error',
+          text: 'Something went wrong. Please try again later.'
+        });
+        console.error(err);
+      });
+    });
+  </script>
+
+</body>
+</html>

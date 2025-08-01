@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+      
+    <link rel="stylesheet" href="about.css">
+
+    <title>B-FIT - About</title>
+    <style>
+        /* Basic styling for the module */
+        .about-module {
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .about-module h2 {
+            color: green;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .about-module p {
+            line-height: 1.6;
+            color:black;
+            margin-bottom: 15px;
+        }
+
+        /* OUR TEAM styling */
+        .team-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .team-member {
+            background-color: black;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            max-width: 250px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .team-member h3 {
+            margin: 10px 0 5px;
+            color: wheat;
+            font: bolder;
+        }
+
+        .team-member p {
+            color:white;
+            font-size: 0.9em;
+        }
+        .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary i {
+  margin-right: 8px; /* Adds space between the icon and the text */
+  font-size: 18px;
+}
+/* Existing styles remain unchanged above */
+
+/* Add this at the bottom of your <style> tag */
+@media (max-width: 768px) {
+    .team-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-member {
+        width: 80%;
+    }
+
+    .btn-secondary {
+        width: 80%;
+        justify-content: center;
+        margin: 10px auto;
+        font-size: 14px;
+    }
+
+    .about-module {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .team-member img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .team-member h3 {
+        font-size: 1.2em;
+    }
+
+    .team-member p {
+        font-size: 0.85em;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="about-module">
+        <h2>Our Team</h2>
+        <a href="home.html" class="btn-secondary">
+            <i class="fas fa-home"></i> GOTO HOME
+          </a>
+          
+        <div class="team-section">
+            <div class="team-member">
+                <img src="rushi.jpg" alt="Rushikesh Satokar">
+                <h3>Rushikesh Satokar</h3>
+                <p>Full Stack Developer </p>
+            </div>
+            <div class="team-member">
+                <img src="janavi.jpg" alt="Janavi Tarale">
+                <h3>Janavi Tarale</h3>
+                <p>UI/UX Designer</p>
+            </div>
+            <div class="team-member">
+                <img src="viraj.jpg" alt="Viraj Balakar">
+                <h3>Viraj Balakar</h3>
+                <p>Research & Development </p>
+            </div>
+            <div class="about-module">
+                <h2>About B-FIT</h2>
+                <p>Welcome to B-FIT, your partner in achieving a healthier and fitter lifestyle. We believe that everyone has the potential to transform their body and mind through consistent effort and the right guidance.</p>
+                <p>Our platform is designed to provide you with the tools and resources you need to embark on a journey towards a stronger, fitter, and more confident you. From personalized workout plans to progress tracking, B-FIT is here to support you every step of the way.</p>
+                <p>At B-FIT, we are passionate about empowering individuals to take control of their well-being. We strive to create a supportive and motivating community where you can connect with others and stay inspired on your fitness journey.</p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* service.css */
+        .service-section {
+            padding: 50px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .service-section h2 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center; /* Center the heading */
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: #4CAF50;
+        }
+
+        .btn-secondary i {
+            margin-right: 10px;
+        }
+
+        .service-items-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the service items horizontally */
+            gap: 20px; /* Add some space between the items */
+        }
+
+        .service-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* For smaller screens where items stack */
+            width: calc(100% - 40px); /* Default width for small screens */
+            text-align: center; /* Center content within each box */
+        }
+
+        @media (min-width: 768px) {
+            .service-item {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (min-width: 992px) {
+            .service-item {
+                width: calc(33.33% - 40px);
+            }
+        }
+
+        .service-item i {
+            color:#4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .service-item h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-item p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .service-item a {
+            display: inline-block;
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .service-item a:hover {
+            color:#4CAF50;
+        }
+        @media (max-width: 576px) {
+    .service-section {
+        padding: 30px 10px;
+    }
+
+    .btn-secondary {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 30px auto;
+        font-size: 16px;
+    }
+
+    .service-item {
+        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .service-item h3 {
+        font-size: 1.2em;
+    }
+
+    .service-item p {
+        font-size: 0.95em;
+    }
+
+    .service-item i {
+        font-size: 2em;
+    }
+}
+
+    </style>
+</head>
+<section id="service" class="service-section">
+    <h2>Our Services</h2>
+    <a href="home.html" class="btn-secondary">
+        <i class="fas fa-home"></i> GOTO HOME
+    </a>
+    <div class="service-items-container">
+        <div class="service-item">
+            <i class="fas fa-dumbbell fa-3x"></i>
+            <h3>Pre-built workout libraries</h3>
+            <p>Level Up Your Fitness With Our Curated Workout Library</p>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-chart-line fa-3x"></i>
+            <h3>Progress Visualization</h3>
+            <p>Track your Progress with B-FIT and see your achievements grow.</p>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-utensils fa-3x"></i>
+            <h3>Nutrition Planning</h3>
+            <p>Our expert nutritionists provide guidance on healthy eating habits and personalized meal plans to support your fitness journey.</p>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-heartbeat fa-3x"></i>
+            <h3>Adaptive workout</h3>
+            <p>Adaptive Workouts designed to improve your overall health and well-being, including stress management and mindfulness techniques.</p>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-spa fa-3x"></i>
+            <h3>Prana hub</h3>
+            <p>Find peace and flexibility with our personalized yoga classes for all levels.</p>
+        </div>
+
+        <div class="service-item">
+            <i class="fas fa-dumbbell fa-3x"></i>
+            <h3>Workouts</h3>
+            <p>Push your limits with our expert-designed gym workout programs for all fitness levels.</p>
+        </div>
+    </div>
+</section>

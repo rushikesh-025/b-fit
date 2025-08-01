@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saturday Core Workout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #fdfbfb, #ebedee);
+      padding: 30px;
+      color: #333;
+    }
+
+    .workout-module {
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .exercise-item {
+      border-top: 1px solid #e0e0e0;
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+
+    .exercise-item:first-child {
+      border-top: none;
+      padding-top: 0;
+      margin-top: 0;
+    }
+
+    .exercise-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .exercise-details img {
+      width: 180px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .instructions {
+      flex: 1;
+    }
+
+    .instructions ol {
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+
+    .timer {
+      font-size: 26px;
+      font-weight: 600;
+      color: #d9534f;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #007bff;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      .exercise-details {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .exercise-details img {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .instructions {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="workout-module">
+    <h3>Saturday: Core Workout</h3>
+
+    <div class="exercise-item">
+      <h4>Plank</h4>
+      <div class="exercise-details">
+        <img src="workout img/Plank.jpg" alt="Plank">
+        <div class="instructions">
+          <ol>
+            <li>Lie face down, elbows under shoulders.</li>
+            <li>Lift body and hold straight.</li>
+            <li>Hold 3 sets for 60 seconds.</li>
+          </ol>
+          <p class="timer" id="timer-plank">01:00</p>
+          <button onclick="startExerciseTimer('Plank', 60, 'timer-plank')">Start Timer</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise-item">
+      <h4>Russian Twists</h4>
+      <div class="exercise-details">
+        <img src="workout img/Russian Twists.jpg" alt="Russian Twists">
+        <div class="instructions">
+          <ol>
+            <li>Sit, knees bent, twist side to side.</li>
+            <li>Use medicine ball if needed.</li>
+            <li>3 sets of 20 reps (10 per side).</li>
+          </ol>
+          <p class="timer" id="timer-twists">02:00</p>
+          <button onclick="startExerciseTimer('Russian Twists', 120, 'timer-twists')">Start Timer</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function startExerciseTimer(exerciseName, duration, timerId) {
+      const timerElement = document.getElementById(timerId);
+      const startAudio = new SpeechSynthesisUtterance(`Start ${exerciseName}`);
+      window.speechSynthesis.speak(startAudio);
+
+      const interval = setInterval(() => {
+        const minutes = Math.floor(duration / 60);
+        const seconds = duration % 60;
+        timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        duration--;
+
+        if (duration < 0) {
+          clearInterval(interval);
+          timerElement.textContent = '00:00';
+          const endAudio = new SpeechSynthesisUtterance(`End ${exerciseName}`);
+          window.speechSynthesis.speak(endAudio);
+        }
+      }, 1000);
+    }
+  </script>
+
+</body>
+</html>
