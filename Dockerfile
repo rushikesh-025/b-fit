@@ -8,3 +8,7 @@ COPY . /var/www/html/
 
 # Change working directory to public/
 WORKDIR /var/www/html/public
+FROM httpd:2.4
+
+# Copy all files to Apache's web root
+COPY . /usr/local/apache2/htdocs/
