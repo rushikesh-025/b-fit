@@ -1,5 +1,4 @@
 <?php
-
 session_start(); // Start the session
 
 header("Content-Type: application/json");
@@ -8,10 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $User_ID = $_POST['User_ID'] ?? '';
     $Password = $_POST['Password'] ?? '';
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "root123";
-    $dbname = "b_fit";
+    // 🔄 Updated for Render DB
+    $servername = "sql12.freesqldatabase.com";
+    $username = "sql12792959";
+    $password = "Gttzi2v86p";
+    $dbname = "sql12792959";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode([
             "status" => "success",
             "message" => "Login successful.",
-            "Name" => $row['Name'] // 🔥 Send name back to frontend
+            "Name" => $row['Name']
         ]);
     } else {
         http_response_code(401);

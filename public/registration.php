@@ -1,11 +1,11 @@
 <?php
 header("Content-Type: application/json");
 
-// Database credentials
-$host = 'localhost';
-$dbname = 'b_fit';
-$username = 'root';
-$password = 'root123';
+// 🔄 Updated for Render DB
+$host = 'sql12.freesqldatabase.com';
+$dbname = 'sql12792959';
+$username = 'sql12792959';
+$password = 'Gttzi2v86p';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -44,3 +44,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     echo json_encode(["status" => "error", "message" => "Invalid request method."]);
 }
+?>
