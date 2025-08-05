@@ -7,11 +7,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $User_ID = $_POST['User_ID'] ?? '';
     $Password = $_POST['Password'] ?? '';
 
-    // 🔹 Debug incoming values
+    // Debug logs (view in Render logs)
     error_log("DEBUG User_ID: " . $User_ID);
     error_log("DEBUG Password: " . $Password);
 
-    // 🔄 Updated for Render DB
+    if (empty($User_ID) || empty($Password)) {
+        http_response_code(400);
+        echo json_encode(["status" => "error", "message" => "Missing User ID or Password."]);
+        exit();
+    }
+
+    // Render DB credentials
     $servername = "sql12.freesqldatabase.com";
     $username = "sql12792959";
     $password = "Gttzi2v86p";
@@ -38,12 +44,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    // 🔹 Debug rows returned
     error_log("DEBUG Rows found: " . $result->num_rows);
 
     if ($result->num_rows === 1) {
-        $row = $result->fetch_assoc(); // Fetch Name
-
+        $row = $result->fetch_assoc();
+        $_SESSION['User_ID'] = $User_ID; // Save in session
         echo json_encode([
             "status" => "success",
             "message" => "Login successful.",
@@ -51,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ]);
     } else {
         http_response_code(401);
-        echo json_encode(["status" => "fail", "message" => "Invalid credentials."]);
+        echo json_encode(["status" => "fail", "message" => "Invalid User ID or Password."]);
     }
 
     $stmt->close();
