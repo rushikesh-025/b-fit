@@ -158,49 +158,52 @@
   </div>
 
   <script>
-    const form = document.getElementById('registrationForm');
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
+  const form = document.getElementById('registrationForm');
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
 
-      const payload = new URLSearchParams(new FormData(form));
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
-      try {
-        const res = await fetch('http://localhost/bfit/registration.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: payload
+    const payload = new URLSearchParams(new FormData(form));
+
+    try {
+      const res = await fetch('https://bfit-web.onrender.com/registration.php', { // ✅ Live Render URL
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: payload
+      });
+
+      const json = await res.json();
+
+      if (res.ok && json.status === 'success') {
+        await Swal.fire({
+          icon: 'success',
+          title: 'Registered!',
+          text: json.message
         });
-        const json = await res.json();
-
-        if (res.ok && json.status === 'success') {
-          await Swal.fire({
-            icon: 'success',
-            title: 'Registered!',
-            text: json.message
-          });
-          window.location.href = 'login.html';
-        } else {
-          await Swal.fire({
-            icon: 'error',
-            title: 'Registration Failed',
-            text: json.message || 'Please check your input and try again.'
-          });
-        }
-      } catch (err) {
-        console.error(err);
-        Swal.fire({
+        window.location.href = 'login.html';
+      } else {
+        await Swal.fire({
           icon: 'error',
-          title: 'Server Error',
-          text: 'Could not connect to registration service.'
+          title: 'Registration Failed',
+          text: json.message || 'Please check your input and try again.'
         });
       }
-    });
-  </script>
+    } catch (err) {
+      console.error(err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Server Error',
+        text: 'Could not connect to registration service.'
+      });
+    }
+  });
+</script>
+
 
 </body>
 </html>

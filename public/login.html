@@ -283,47 +283,51 @@ body {
   </div>
 
   <script>
-    const form = document.getElementById('loginForm');
+  const form = document.getElementById('loginForm');
 
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-      const formData = new FormData(form);
+    const formData = new URLSearchParams();
+    formData.append('User_ID', document.getElementById('User_ID').value);
+    formData.append('Password', document.getElementById('Password').value);
 
-      fetch('http://localhost/bfit/login.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(res => res.json())
-      .then(async data => {
-        if (data.status === 'success') {
-          await Swal.fire({
-            icon: 'success',
-            title: 'Login Successful',
-            html: `<b>Welcome to B‑FIT, ${data.Name || 'User'}!</b>`,
-            timer: 2500,
-            showConfirmButton: false
-          });
+    fetch('https://bfit-web.onrender.com/login.php', { // ✅ Live Render URL
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: formData
+    })
+    .then(res => res.json())
+    .then(async data => {
+      if (data.status === 'success') {
+        await Swal.fire({
+          icon: 'success',
+          title: 'Login Successful',
+          html: `<b>Welcome to B‑FIT, ${data.Name || 'User'}!</b>`,
+          timer: 2500,
+          showConfirmButton: false
+        });
 
-          window.location.href = 'home.html';
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Login Failed',
-            text: data.message || 'Invalid credentials!'
-          });
-        }
-      })
-      .catch(err => {
+        window.location.href = 'home.html';
+      } else {
         Swal.fire({
           icon: 'error',
-          title: 'Server Error',
-          text: 'Something went wrong. Please try again later.'
+          title: 'Login Failed',
+          text: data.message || 'Invalid credentials!'
         });
-        console.error(err);
+      }
+    })
+    .catch(err => {
+      Swal.fire({
+        icon: 'error',
+        title: 'Server Error',
+        text: 'Something went wrong. Please try again later.'
       });
+      console.error(err);
     });
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
