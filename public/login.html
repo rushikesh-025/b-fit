@@ -283,6 +283,7 @@ body {
   </div>
 
   <script>
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('loginForm');
 
   form.addEventListener('submit', function (e) {
@@ -292,7 +293,7 @@ body {
     formData.append('User_ID', document.getElementById('User_ID').value);
     formData.append('Password', document.getElementById('Password').value);
 
-    fetch('https://bfit-web.onrender.com/login.php', { // ✅ Live Render URL
+    fetch('https://bfit-web.onrender.com/login.php', { // ✅ Live URL
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: formData
@@ -307,7 +308,6 @@ body {
           timer: 2500,
           showConfirmButton: false
         });
-
         window.location.href = 'home.html';
       } else {
         Swal.fire({
@@ -326,7 +326,9 @@ body {
       console.error(err);
     });
   });
+});
 </script>
+
 
 
 </body>
